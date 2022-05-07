@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2022 at 02:26 PM
+-- Generation Time: May 07, 2022 at 04:07 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -53,7 +53,7 @@ INSERT INTO `book` (`BookID`, `BookName`, `Image`, `CategoryID`, `PublisherID`, 
 (7, 'Chiến Binh Cầu Vồng (Tái Bản 2', './images/7mau.jpg', 2, 1, 100000, 10, 0, 0, 0, 1),
 (9, 'Đời Thừa - Danh Tác Văn Học Việt Nam', './images/doithua.jpg', 2, 1, 10000, 15, 24, 0.2, 1, 1),
 (11, 'Việt Nam Sử Lược', './images/viet-nam-su-luoc.jpg', 4, 1, 10000, 8, 21, 0.3, 1, 1),
-(12, 'Hiểu Hết Về Tâm Lý Học', './images/hieuhetvetamlyhoc.jpg', 7, 1, 11300, 26, 30, 0.4, 1, 1),
+(12, 'Hiểu Hết Về Tâm Lý Học', './images/hieuhetvetamlyhoc.jpg', 7, 1, 11300, 25, 31, 0.4, 1, 1),
 (13, 'Giáo Trình Triết Học Mác – Lên', './images/giaotrinhmaclenin.jpg', 5, 1, 10000, 20, 1, 0.2, 0, 1),
 (14, 'Bài Tập Lập Trình Python', './images/python.jpg', 1, 1, 10000, 5, 22, 0.4, 1, 1);
 
@@ -110,7 +110,7 @@ INSERT INTO `customers` (`CustomerID`, `Password`, `FullName`, `Address`, `Email
 ('admin2', 'canh123', 'Cảnhhh', 'Long An', '123@gmail.com', '0123123123', 3, 1),
 ('canh123', 'admin', 'Cảnh', 'LA', '123@gmail.com', '0808080808', 2, 1),
 ('canh1234', 'admiin', 'ad', 'ad', 'admin@gmail.com', '1231231231', 2, 1),
-('xuancanh', '123', 'Nguyen Xuan Canh', 'LA', 'x.canh123@gmail.com', '0817979112', 2, 0),
+('xuancanh', '123', 'Nguyen Xuan Canh', 'LA', 'x.canh123@gmail.com', '0817979112', 2, 1),
 ('xuancanh2', '123', 'Nguyễn Xuân Cảnh', 'LA', 'x.canh040701@gmail.c', '+848179791', 2, 1),
 ('xuancanh3', '123', '1x0007 Nguyễn', 'asd', 'x.canh040701@gmail.c', '+108179791', 2, 1);
 
@@ -223,7 +223,8 @@ INSERT INTO `orderdetail` (`OrderID`, `BookID`, `Quantity`, `Price`) VALUES
 (26, 9, 3, 8000),
 (26, 11, 3, 7000),
 (27, 9, 2, 8000),
-(27, 14, 1, 6000);
+(27, 14, 1, 6000),
+(28, 12, 1, 6780);
 
 -- --------------------------------------------------------
 
@@ -259,7 +260,8 @@ INSERT INTO `orders` (`OrderID`, `CustomerID`, `Date`, `Total`, `Shipped`) VALUE
 (24, 'xuancanh', '2021-12-15', 3000, 100),
 (25, 'xuancanh', '2021-12-15', 27120, 100),
 (26, 'xuancanh', '2022-04-27', 45000, 1),
-(27, 'xuancanh', '2022-04-27', 22000, 1);
+(27, 'xuancanh', '2022-04-27', 22000, 1),
+(28, 'xuancanh', '2022-05-07', 6780, 0);
 
 -- --------------------------------------------------------
 
@@ -369,6 +371,14 @@ CREATE TABLE `wistlist` (
   `CustomerID` varchar(16) NOT NULL,
   `BookID` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `wistlist`
+--
+
+INSERT INTO `wistlist` (`CustomerID`, `BookID`) VALUES
+('xuancanh', 11),
+('xuancanh', 12);
 
 --
 -- Indexes for dumped tables
@@ -486,7 +496,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `OrderID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `OrderID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `permission`
