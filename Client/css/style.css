@@ -1,0 +1,699 @@
+html {
+  scroll-behavior: smooth;
+
+}
+a {
+    color: #000;
+  }
+  
+  a:hover {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  * {
+    outline: none;
+  }
+  
+  ul li {
+    list-style: none;
+  }
+  
+  [type="search"]::-webkit-search-cancel-button,
+  [type="search"]::-webkit-search-decoration {
+    appearance: none;
+  }
+  
+  .discountBar {
+    background-color: #fee2f1;
+  }
+  
+  .navbar .form-inline {
+    width: 55%;
+    position: relative;
+  }
+  
+  .navbar .form-inline .input__zone {
+    border: 1px solid #f7941e !important;
+  }
+  
+  .navbar .form-inline .form-control {
+    width: 100%;
+  }
+  
+  .navbar .form-inline .search__btn {
+    position: absolute;
+    color: #f7941e;
+  }
+  
+  .navbar .navbar-brand {
+    width: 15%;
+  }
+  
+  .navbar .navbar-brand .fhs__logo {
+    width: 100%;
+  }
+  
+  .navbar .collapse {
+    margin-left: 0%;
+  }
+  
+  .navbar .collapse .nav-item {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin: auto;
+  }
+  
+  .navbar .collapse .nav-item i {
+    display: block;
+    text-align: center;
+  }
+
+  .navbar .collapse .nav-item.loginActive{
+    background-color: #f7941e;
+    border-radius: 5px;
+  }
+  
+  .navbar .collapse .nav-item.loginActive a{
+    color: white;
+  }
+  
+  .navbar .collapse .nav-item .fas:before {
+    color: #f7941e;
+  }
+  
+  .navbar .collapse .nav-item .nav-link {
+    color: #f7941e;
+  }
+  
+  .navbar .dropdown .dropdown-item {
+    text-transform: none;
+    font-size: 0.9rem;
+  }
+  
+  .form-inline {
+    display: inline-block;
+  }
+  
+  .web__content {
+    padding-top: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .web__content .head__content .list-group .list-group-item {
+    border: none;
+  }
+  
+  .web__content .head__content .list-group .list-group-item.active {
+    background-color: #f7941e;
+  }
+  
+  .web__content .head__content .list-group .list-group-item:first-child, .web__content .head__content .list-group .list-group-item:last-child {
+    border-radius: 0;
+  }
+  
+  .web__content .head__content .list-group .list-group-item img {
+    right: 10px;
+    top: 21px;
+  }
+  
+  .web__content .head__content .list-group .list-group-item:hover {
+    background-color: #fcdab0;
+  }
+  
+  .web__content .head__content .list-group .list-group-item.active:hover {
+    background-color: #f7941e;
+  }
+  
+  .web__content .discount__banner .col-3 {
+    padding-left: 14px;
+  }
+  
+  .web__content .icon__menu {
+    background-color: #fff;
+    padding: 20px;
+  }
+  
+  .web__content .icon__menu ul.row {
+    margin: 0;
+  }
+  
+  .web__content .icon__menu ul li {
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  .web__content .icon__menu ul li p {
+    margin: 0;
+  }
+  
+  .web__content .flash__sale {
+    background-color: #fff;
+  }
+  
+  .web__content .flash__sale .nav-link {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+  .web__content .flash__sale .nav-link.active {
+    color: #f7941e;
+    background-color: #fff;
+    border: 1px solid #f7941e;
+  }
+  
+  .web__content .flash__sale.container {
+    padding: 0;
+  }
+  
+  .web__content .flash__sale .flash__sale__head {
+    background-color: #fcdab0;
+    padding: 10px;
+  }
+  
+  .web__content .flash__sale .flash__sale__head img {
+    width: 3%;
+    margin-right: 10px;
+  }
+  
+  .web__content .flash__sale .flash__sale__head .black__title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+  
+  .web__content .flash__sale .flash__sale__content {
+    padding: 0 20px 0 20px;
+  }
+  
+  .web__content .flash__sale .fahasa__deal {
+    padding: 0 20px 0 20px;
+  }
+  
+  .flash__sale__item img {
+    width: 210px;
+    height: 210px;
+  }
+  
+  .view__more {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .view__more a {
+    box-shadow: 2px 3px 5px #ccc;
+    font-size: 14px;
+    color: #fff !important;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    width: 220px;
+    display: inline-block;
+    background-image: linear-gradient(to right, #ff9800, #f7695d);
+    transition: 0.2s;
+  }
+  
+  .view__more a:hover {
+    padding: 12px;
+    width: 224px;
+  }
+  
+  .add__to__cart {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+  }
+  
+  .add__to__cart a {
+    border: 1px solid #f7941e;
+    font-size: 14px;
+    box-shadow: 2px 3px 5px #ccc;
+    color: #f7941e;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    width: 220px;
+    display: inline-block;
+    background-color: #fff;
+    transition: 0.2s;
+  }
+  
+  .add__to__cart a:hover {
+    padding: 12px;
+    width: 224px;
+  }
+  
+  .rating .flash__sale__head {
+    background-color: #000 !important;
+    color: #fff;
+    padding-left: 20px !important;
+  }
+  
+  .rating .rating__item {
+    padding-left: 20px;
+  }
+  
+  .rating .rating__item.border-right:hover, .rating .rating__item.border-right:focus {
+    border-right: 2px solid #f7941e !important;
+  }
+  
+  .rating .rating__item .col-4,
+  .rating .rating__item .col-7 {
+    padding: 0;
+  }
+  
+  .rating .rating__item .col-7 {
+    padding-left: 20px;
+  }
+  
+  .rating .rating__item .rank {
+    padding: 0;
+    text-align: center;
+  }
+  
+  .rating .rating__item .title {
+    cursor: pointer;
+  }
+  
+  .rating .rating__item .title img {
+    max-height: 100px;
+    width: 100px;
+  }
+  
+  .rating .rating__item .more__info img {
+    max-height: 450px;
+  }
+  
+  .rating .rating__item .more__info .col-8 {
+    padding-right: 50px;
+  }
+  
+  .sale__price {
+    width:40%;
+    color: #f7941e;
+    font-weight: 600;
+  }
+  
+  .default__price {
+    color: #888888;
+    text-decoration: line-through;
+    font-size: 1.1em;
+  }
+  
+  .item {
+    padding: 5px;
+  }
+  
+  .item h6 {
+    white-space: nowrap;
+    max-width: 75ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .item .progress {
+    border-radius: 20px;
+    margin-bottom: 0px;
+    text-align: center;
+    margin-top: 5px;
+    background-color: rgba(210, 33, 33, 0.4);
+    background-image: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    height: 18px;
+    box-shadow: none;
+  }
+  
+  .item .progress .progress-value {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    color: #ffffff;
+    font-size: 1em;
+  }
+  
+  .item .progress .progress-bar {
+    background-image: linear-gradient(to bottom, #d22121 0%, #d22121 100%);
+  }
+  
+  footer {
+    background-color: #f0f0f0;
+  }
+  
+  footer .container {
+    background-color: #fff;
+  }
+  
+  footer .container .swiper__item {
+    padding: 20px;
+  }
+  
+  footer .footer__content.container {
+    padding: 0;
+  }
+  
+  footer .footer__content .footer__left,
+  footer .footer__content .footer__right {
+    padding: 30px 20px 20px 20px;
+    font-size: 0.8rem;
+  }
+  
+  footer .footer__content .footer__right h6 {
+    text-transform: uppercase;
+    padding-top: 10px;
+  }
+  
+  footer .footer__content .footer__right ul {
+    padding: 0;
+  }
+  
+  footer .footer__content .footer__right ul li {
+    list-style: none;
+    padding-top: 10px;
+  }
+  
+  footer .footer__content .footer__right ul li a {
+    font-size: 0.8rem;
+    transition: 0.5s;
+  }
+  
+  footer .footer__content .footer__right ul li a:hover {
+    margin-left: 10px;
+    color: #f7941e;
+  }
+  
+  #countDownSale {
+    font-weight: bold;
+  }
+  
+  #countDownSale .box__timing {
+    margin-right: 2px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  
+  .productCategory {
+    background-color: #f7941e;
+    padding: 10px;
+    font-weight: 500;
+  }
+  
+  .header__menu {
+    line-height: 43px;
+  }
+  
+  .header__menu a {
+    font-size: 0.9rem;
+    margin-right: 14px;
+    margin-left: 17px;
+  }
+  
+  .header__menu img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .product__wrapper {
+    background-color: #f0f0f0;
+  }
+  
+  .product__wrapper .product__content {
+    background-color: #fff;
+  }
+  
+  .product__wrapper .product__content .view__more {
+    left: 250px;
+    position: absolute;
+  }
+  
+  .product__wrapper .product__content.container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .product__wrapper .product__content #bookProvider,
+  .product__wrapper .product__content #bookPublisingCompany,
+  .product__wrapper .product__content #bookAuthor,
+  .product__wrapper .product__content #bookCover {
+    font-weight: bold;
+  }
+  
+  .product__wrapper .product__content .quantity .box__quantity {
+    font-size: 1.3rem;
+    border-radius: 5px;
+    width: 40%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.644);
+    padding: 10px 0 10px 0;
+  }
+  
+  .product__wrapper .product__content .quantity .btn {
+    outline: none;
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+    color: rgba(0, 0, 0, 0.644);
+    padding: 0 15px 0 15px;
+  }
+  
+  .product__wrapper .product__content .delivery a {
+    text-decoration: underline;
+    color: #2f80ed;
+    font-weight: 500;
+  }
+  
+  .product__wrapper .product__content .book__rate .number__of__rate {
+    color: #f7941e;
+    font-size: 0.8rem;
+  }
+  
+  .product__wrapper .product__content .img__left img {
+    margin-bottom: 20px;
+  }
+  
+  .product__wrapper .product__content .product__price span {
+    margin-right: 20px;
+  }
+  
+  .product__wrapper .product__content .product__price .discount__percent {
+    padding: 3px;
+    background-color: rgba(218, 129, 149, 0.2);
+    border-radius: 5px;
+    color: #f7941e;
+    font-weight: 500;
+  }
+  
+  .product__wrapper .product__list h3 {
+    color: #f7941e;
+  }
+  
+  .nav__button {
+    cursor: pointer;
+  }
+  
+  .login__zone {
+    width: 100%;
+    z-index: 10000;
+    position: fixed;
+  }
+  
+  #loginForm {
+    color: #999999;
+  }
+  
+  #loginForm .login-wrap {
+    position: relative;
+    background: #fff;
+    box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+  }
+  
+  #loginForm .login-wrap h3 {
+    font-weight: 300;
+  }
+  
+  #loginForm .social-media .social-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    margin-right: 5px;
+    border-radius: 50%;
+  }
+  
+  #loginForm span {
+    color: #999999;
+  }
+  
+  #loginForm .form-group .icon {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: #f7941e;
+    font-size: 20px;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  #loginForm .form-group .icon span {
+    color: #fff;
+  }
+  
+  .btn.btn-primary {
+    background: #f7941e !important;
+    border: 1px solid #f7941e !important;
+    color: #fff !important;
+  }
+  
+  #loginForm .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  #loginForm .checkbox-primary {
+    color: #f7941e;
+  }
+  
+  #loginForm .form-control {
+    height: 48px;
+    background: #fff;
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 60px;
+  }
+  
+  #loginForm .form-control:focus {
+    border-color: #f7941e;
+  }
+  
+  #loginForm .checkbox-wrap {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    user-select: none;
+  }
+  
+  #loginForm .checkbox-primary {
+    color: #f7941e;
+  }
+  
+  #loginForm a {
+    transition: 0.3s all ease;
+    color: #f7941e;
+  }
+  
+  .danhmucsp {
+    background-color: #f0f0f0;
+  }
+  
+  .danhmucsp .danhmucsp__content {
+    background-color: #fff;
+  }
+  
+  #rangeBox {
+    /* carry complete  range box*/
+    height: 100px;
+  }
+  
+  #sliderBox {
+    position: relative;
+    top: 0%;
+  }
+  
+  #slider0to50 {
+    width: 180px;
+  }
+  
+  #slider51to100 {
+    width: 180px;
+  }
+  
+  #inputRange {
+    position: relative;
+    top: 50%;
+  }
+  
+  #inputRange::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  
+  #inputRange #min {
+    width: 40%;
+    float: left;
+  }
+  
+  #inputRange #max {
+    width: 40%;
+    float: right;
+  }
+  .input-group{
+    display: flex;
+  }
+  .btn-fahasa{
+    color: #fff !important;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    /* border-radius: 25px; */
+    width: 220px;
+    display: inline-block;
+    background-image: linear-gradient(to right, #ff9800, #f7695d);
+  }
+
+  @media only screen and (max-width: 1200px) {
+    header .collapse .nav__button {
+      padding-left: 0 !important;
+    }
+  }
+  
+  @media only screen and (max-width: 990px) {
+    * {
+      font-size: 0.8rem;
+    }
+    .navbar .navbar-brand .fhs__logo {
+      width: 170%;
+    }
+    .navbar .form-inline .form-control {
+      width: 115%;
+    }
+    .navbar .form-inline .search__btn {
+      right: -12%;
+    }
+    header .collapse .nav-item {
+      padding-bottom: 10px !important;
+      font-size: 1rem !important;
+    }
+    .head__content .list-group .list-group-item {
+      padding: 10px;
+    }
+  }
+  
+  @media only screen and (max-width: 520px) {
+    .add__to__cart a {
+      width: 170px;
+    }
+  }
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  /*# sourceMappingURL=style.css.map */
