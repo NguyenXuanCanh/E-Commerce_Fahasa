@@ -340,12 +340,12 @@ $listPermis = $listPermis->getAllPermission();
         let arrEmail = document.getElementsByClassName("email");
         let arrDiaChi = document.getElementsByClassName("diaChi");
         let arrSoDienThoai = document.getElementsByClassName("soDienThoai");
-        modalInput[0].value = arrTaiKhoan[index].innerHTML;
-        modalInput[1].value = arrTen[index].innerHTML;
-        modalInput[2].value = arrDiaChi[index].innerHTML;
-        modalInput[3].value = arrEmail[index].innerHTML;
-        modalInput[4].value = arrSoDienThoai[index].innerHTML;
-        modalInput[5].value = PermissionID;
+        modalInput[7].value = arrTaiKhoan[index].innerHTML;
+        modalInput[8].value = arrTen[index].innerHTML;
+        modalInput[9].value = arrDiaChi[index].innerHTML;
+        modalInput[10].value = arrEmail[index].innerHTML;
+        modalInput[11].value = arrSoDienThoai[index].innerHTML;
+        modalInput[12].value = PermissionID;
     }
 
     $("#changeInfoForm").submit(function(e) {
@@ -419,8 +419,15 @@ $listPermis = $listPermis->getAllPermission();
             type: 'POST',
             data: formData,
             success: function(response) {
-                alert(response);
-                window.location.reload();
+                if(response==""){
+                    alert("Xóa không thành công do bị ràng buộc dữ liệu");
+                }else{
+                    alert(response);
+                    window.location.reload();
+                }
+            },
+            error: function(err){
+                alert(err);
             },
             cache: false,
             contentType: false,

@@ -121,7 +121,7 @@ $indexCTDH = 0;
                 $isRenderBTN = false;
                 while ($row = $resmactdh->fetch_assoc()) {
                 ?>
-                    <tr class="row">
+                    <tr class="row" style="margin-top: 10px;">
                         <td class="col-1"><?php if (!$isRender) {
                                                 echo $i + 1;
                                                 $isRender = "true";
@@ -166,7 +166,7 @@ $indexCTDH = 0;
                 <?php
                 }
                 ?>
-                <tr class="row">
+                <tr class="row" style="border-bottom:1px solid #f0f0f0;">
                     <td class="col-9"></td>
                     <td class="text-right pt-0 pb-3" style="font-weight:bold">
                         <h4>Tổng tiền:</h4>

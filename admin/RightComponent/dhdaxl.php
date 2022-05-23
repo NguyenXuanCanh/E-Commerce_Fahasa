@@ -128,7 +128,7 @@ if (!$arrMaDH) {
                 $isRenderBTN = false;
                 while ($row = $resmactdh->fetch_assoc()) {
                 ?>
-                    <tr>
+                    <tr style="margin-top: 10px;">
                         <td><?php if (!$isRender) {
                                 echo $i + 1;
                                 $isRender = "true";
@@ -169,7 +169,7 @@ if (!$arrMaDH) {
                 <?php
                 }
                 ?>
-                <tr>
+                <tr style="border-bottom:1px solid #f0f0f0;">
                     <td></td>
                     <td></td>
                     <td></td>

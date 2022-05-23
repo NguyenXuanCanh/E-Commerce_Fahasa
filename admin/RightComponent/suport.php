@@ -33,42 +33,9 @@ $customer=$conn->query("SELECT * FROM messages WHERE IncomingID='$adminID' GROUP
 
                 <div class="p-3">
 
-                  <div class="input-group rounded mb-3">
-                    <input type="search" class="form-control rounded search" placeholder="Search" aria-label="Search"
-                      aria-describedby="search-addon" />
-                  </div>
-
                   <div data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px;" >
-                    <ul class="list-unstyled mb-0">
-                      <?php
-                      foreach($customer as $row){
-                        $cusID=$row['OutgoingID'];
-                        $cus=$conn->query("SELECT FullName FROM customers WHERE CustomerID='$cusID'");
-                        $cus=$cus->fetch_assoc();
-                      ?>
-                      <li class="p-2 border-bottom sp-item" onclick="selectSuporter('<?=$row['OutgoingID']?>')">
-                        <a href="#!" class="d-flex justify-content-between">
-                          <div class="d-flex flex-row">
-                            <div>   
-                              <img
-                                src="../Client/images/User-avatar.svg.png"
-                                alt="avatar" class="d-flex align-self-center me-3" width="60">
-                              <span class="badge bg-success badge-dot"></span>
-                            </div>
-                            <div class="pt-1">
-                              <p class="fw-bold mb-0"><?=$cus['FullName']?></p>
-                              <p class="small text-muted">Hello, Are you there?</p>
-                            </div>
-                          </div>
-                          <div class="pt-1">
-                            <p class="small text-muted mb-1">Just now</p>
-                            <!-- <span class="badge bg-danger rounded-pill float-end">3</span> -->
-                          </div>
-                        </a>
-                      </li>
-                      <?php
-                      }
-                      ?>
+                    <ul class="list-unstyled mb-0" id="UserList">
+                      
                     </ul>
                   </div>
                   
@@ -84,7 +51,14 @@ $customer=$conn->query("SELECT * FROM messages WHERE IncomingID='$adminID' GROUP
                 </div>
 
                 <div class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2" id="inputform" >
-                  
+                <div class="form-outline" style="width:100%;">
+                <form onsubmit="sendMsg(localStorage.getItem('IncomingID'))" class="row">
+                    <input class="form-control col-11" id="msg" ></input>
+                    <button style="color:#39c0ed; border:none; background:none;" class="col-1">
+                        <i class="fa fa-share" aria-hidden="true" style="font-size:25px; cursor:pointer;"></i>
+                    </button>
+                </form>
+                </div>
                 </div>
 
               </div>
@@ -99,11 +73,25 @@ $customer=$conn->query("SELECT * FROM messages WHERE IncomingID='$adminID' GROUP
   </div>
 </section>
 <script>
+    setInterval(function loadUser(){
+      $.ajax({
+            url: 'chatapp/getUserList.php',
+            method: 'POST',
+            success: function(result) {
+              // console.log(result);
+              document.getElementById("UserList").innerHTML=(result);
+            },
+            error: function(err){
+                console.log(err);
+            }
+        });
+    } ,1500);
     function selectSuporter(CusID){
       localStorage.setItem('IncomingID',CusID);
-      loadMsg(CusID);
+      loadMsg();
     }
-    function loadMsg(CusID){
+    setInterval(function loadMsg(){
+        CusID=localStorage.getItem('IncomingID');
         $.ajax({
             url: 'chatapp/getMsg.php',
             method: 'POST',
@@ -113,21 +101,12 @@ $customer=$conn->query("SELECT * FROM messages WHERE IncomingID='$adminID' GROUP
             success: function(result) {
               console.log(result);
                 document.getElementById("chatContent").innerHTML=(result);
-                document.getElementById("inputform").innerHTML=`
-                <div class="form-outline" style="width:100%;">
-                <form onsubmit="sendMsg('`+CusID+`')" class="row">
-                    <input class="form-control col-11" id="msg" ></input>
-                    <button style="color:#39c0ed; border:none; background:none;" class="col-1">
-                        <i class="fa fa-share" aria-hidden="true" style="font-size:25px; cursor:pointer;"></i>
-                    </button>
-                </form>
-                </div>`;
             },
             error: function(err){
                 console.log(err);
             }
         });
-    }
+    }, 500);
     function sendMsg(CusID){
         event.preventDefault();
         let msg = document.getElementById("msg").value;
