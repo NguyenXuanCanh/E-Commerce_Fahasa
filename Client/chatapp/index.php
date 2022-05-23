@@ -170,9 +170,16 @@
             }
             ?>
           </ul>
-              <div class="card-body" id="chatContent" style="overflow-y: scroll; max-height: 600px;">
-              
-              
+              <div class="card-body" style="overflow-y: scroll; max-height: 600px;">
+              <div id="chatContent"></div>
+              <div class="form-outline" style="display:none;" id="inputt">
+                <form onsubmit="sendMsg(localStorage.getItem('IncomingID'))" class="row">
+                    <input class="form-control col-11" id="msg"></input>
+                    <button style="color:#39c0ed; border:none; background:none;" class="col-1">
+                        <i class="fa fa-share" aria-hidden="true" style="font-size:25px; cursor:pointer;"></i>
+                    </button>
+                </form>
+                </div>
               </div>
               <?php
             }
@@ -185,12 +192,14 @@
     function selectSuporter(CusID){
       document.getElementById("suporter").style.display="none";
       document.getElementById("chatContent").style.display="block";
+      document.getElementById("inputt").style.display="block";
       localStorage.setItem('IncomingID',CusID);
-      loadMsg(CusID);
+      loadMsg();
     }
     function back(){
         document.getElementById("suporter").style.display="block";
         document.getElementById("chatContent").style.display="none";
+        document.getElementById("inputt").style.display="none";
     }
     function openChat(){
         if(document.getElementById("chatbox").style.display=="block"){
@@ -200,7 +209,9 @@
     function closeChat(){
         document.getElementById("chatbox").style.display="none";
     }
-    function loadMsg(CusID){
+    // setInterval(function() {$('.main-chat').load('msglog.php');}, 1000);
+    setInterval(function loadMsg(){
+        CusID=localStorage.getItem('IncomingID');
         $.ajax({
             url: 'chatapp/getMsg.php',
             method: 'POST',
@@ -210,21 +221,13 @@
             success: function(result) {
               console.log(result);
                 document.getElementById("chatContent").innerHTML=(result);
-                document.getElementById("chatContent").innerHTML+=`
-                <div class="form-outline">
-                <form onsubmit="sendMsg('`+CusID+`')" class="row">
-                    <input class="form-control col-11" id="msg"></input>
-                    <button style="color:#39c0ed; border:none; background:none;" class="col-1">
-                        <i class="fa fa-share" aria-hidden="true" style="font-size:25px; cursor:pointer;"></i>
-                    </button>
-                </form>
-                </div>`;
             },
             error: function(err){
                 console.log(err);
             }
         });
-    }
+    }, 500);
+    
     function sendMsg(CusID){
         event.preventDefault();
         let msg = document.getElementById("msg").value;

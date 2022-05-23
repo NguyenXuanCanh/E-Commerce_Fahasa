@@ -55,13 +55,25 @@
         <tbody>
             <?php
             $customerID=$_SESSION['userId'];
-            $bookByCusID = $conn->query("SELECT BookName, Image, Price FROM wistlist, book WHERE CustomerID='$customerID' AND wistlist.BookID=book.BookID");
+            $bookByCusID = $conn->query("SELECT BookName, Image, Price, book.BookID FROM wistlist, book WHERE CustomerID='$customerID' AND wistlist.BookID=book.BookID");
             foreach ($bookByCusID as $row) {
             ?>
                 <tr>
-                    <td><?= $row['BookName'] ?></td>
-                    <td><img src="<?= $row['Image'] ?>" style="height:150px" alt=""></td>
-                    <td><?= number_format($row['Price'], '0', ',', '.'); ?> vnd</td>
+                    <td>
+                        <a href="./index.php?bookID=<?=$row['BookID']?>">
+                            <?= $row['BookName'] ?>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="./index.php?bookID=<?=$row['BookID']?>">
+                        <img src="<?= $row['Image'] ?>" style="height:150px" alt="">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="./index.php?bookID=<?=$row['BookID']?>">
+                        <?= number_format($row['Price'], '0', ',', '.'); ?> vnd
+                        </a>
+                    </td>
                 </tr>
             <?php
             }

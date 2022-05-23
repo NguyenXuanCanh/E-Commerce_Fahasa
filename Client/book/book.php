@@ -151,7 +151,7 @@ $cate = $cate->fetch_assoc();
                         <div class="d-inline box__quantity">
                             <a type="button" onclick="tangGiamSoLuong(-1)" class="btn">-</a>
                             <input style="border: none;
-                                      width: 20px;text-align:center;" name="soluong" type="number" id="number__quantity" value="1">
+                                      width: 40px;text-align:center;" name="soluong" type="number" id="number__quantity" value="1">
                             <a type="button" onclick="tangGiamSoLuong(1)" class="btn">+</a>
                         </div>
                         <div class="add__to__cart" style="position: absolute;
